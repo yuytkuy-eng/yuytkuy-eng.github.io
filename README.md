@@ -35,6 +35,17 @@
 
 页脚的 Total page views 使用[不蒜子](https://ibruce.info/2015/04/04/busuanzi/)统计全站累计浏览次数。仅在 `_config.yml` 的 `url` 所指定的正式域名上启用，本地和其他预览地址不计数。尚未上线或计数服务无法读取时显示 `—`；它表示暂无数据，而非零次访问。更换正式域名时应同步更新 `url`，计数也会随域名变化。
 
+## News 更新
+
+编辑 `_data/news.yml`，把 `[]` 替换为以下格式，每条新闻包含日期和正文，最新条目放在最上面：
+
+```yaml
+- date: "2026-10-06"
+  text: "A real update about your work, with an optional [link](https://example.com)."
+```
+
+提交修改到 `main` 后，首页 News 会随网站发布更新。这里的示例只用于说明格式，不会出现在网页上。
+
 ## Blog 文章
 
 Blog 当前没有公开文章，页面显示简短的空状态。文章发布后，会自动按年份和日期倒序排列，显示标题、日期、摘要和可选主题标签；点击标题进入文章详情。RSS Feed 同步收录已发布文章。
@@ -101,7 +112,7 @@ Linux 首次安装依赖若缺少编译环境，请安装 `ruby-dev`、`build-es
 3. 仓库 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**。
 4. 推送到 `main` 或 `master`，随附的 `pages.yml` 自动生成并发布网站。查看 Actions 确认成功。
 
-当前配置根据本机已登录账户预填为 `yuytkuy-eng.github.io`，尚未创建远程仓库或发布。
+正式站点地址为 [yuytkuy-eng.github.io](https://yuytkuy-eng.github.io/)，源码仓库为 [yuytkuy-eng/yuytkuy-eng.github.io](https://github.com/yuytkuy-eng/yuytkuy-eng.github.io)。仓库已启用 GitHub Actions 发布；后续修改提交到 `main`，网站会自动更新。若没有及时显示最新内容，先检查 Actions 是否发布成功，再刷新浏览器。
 若使用普通项目仓库（如 `academic-homepage`），`url` 保持 `https://<username>.github.io`，`baseurl` 改为 `/academic-homepage`，`repository` 填对应仓库。
 
 发布流程依据 [GitHub Pages 官方文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
