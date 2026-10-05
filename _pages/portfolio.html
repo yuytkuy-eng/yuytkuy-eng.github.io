@@ -1,0 +1,29 @@
+---
+title: "Portfolio"
+permalink: /portfolio/
+author_profile: true
+---
+<div class="portfolio-page">
+  <p class="portfolio-intro">{{ site.data.portfolio.intro | escape }}</p>
+  <nav class="portfolio-sections" aria-label="Project categories">
+    {% for group in site.data.portfolio.groups %}<a href="#{{ group.id }}">{{ group.title | escape }}</a>{% endfor %}
+  </nav>
+  {% for group in site.data.portfolio.groups %}
+  <section class="portfolio-group" aria-labelledby="{{ group.id }}">
+    <h2 id="{{ group.id }}">{{ group.title | escape }}</h2>
+    {% assign projects = site.data.portfolio.projects | where: 'category', group.id %}
+    <div class="portfolio-list">
+      {% for project in projects %}
+      <article class="portfolio-item">
+        <div class="portfolio-visual"><a class="portfolio-thumbnail" href="{{ project.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ project.thumbnail | relative_url }}" width="360" height="240" alt="" loading="lazy" decoding="async"></a><p class="portfolio-figure-label">{{ project.figure_kind | escape }}</p></div>
+        <div class="portfolio-item-content">
+          <h3><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h3>
+          <p class="portfolio-summary">{{ project.summary | escape }}</p>
+          <div class="portfolio-links"><a href="{{ project.url | relative_url }}" aria-label="View project: {{ project.title | escape }}">View project <span aria-hidden="true">→</span></a><a href="{{ project.github }}" aria-label="GitHub: {{ project.title | escape }}">GitHub</a>{% if project.paper %}<a href="{{ project.paper }}">Paper</a>{% endif %}</div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>

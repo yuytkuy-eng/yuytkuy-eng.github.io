@@ -1,0 +1,46 @@
+# Keep each section in display order, with newer papers first.
+- title: "Erratum: Quantum search for gravitational wave of massive black hole binaries [Phys. Rev. D 112, 083004 (2025)]"
+  category: published
+  status: accepted
+  date: "2026-09-11"
+  venue: "Physical Review D"
+  authors:
+    - name: "Shifan Yu"
+      highlight: true
+    - name: "Fangzhou Guo"
+    - name: "Jibo He"
+  paperurl: "https://journals.aps.org/prd/accepted/10.1103/x3pz-ng9z"
+  doi: "10.1103/x3pz-ng9z"
+
+- title: "Probabilistic Controlled Quantum Teleportation of an Arbitrary Qubit via a Four-Qubit Asymmetric Entangled State and Its Qiskit-Based Monte Carlo Simulation"
+  category: published
+  status: published
+  date: "2026-08-13"
+  venue: "International Journal of Theoretical Physics"
+  volume: "65"
+  article_number: "236"
+  selected: true
+  research_topic: "Design of novel quantum teleportation protocols"
+  authors:
+    - name: "Shifan Yu"
+      highlight: true
+  paperurl: "https://link.springer.com/article/10.1007/s10773-026-06433-y"
+  doi: "10.1007/s10773-026-06433-y"
+
+- title: "Detector–temperature gauge and robust calibration in collisional quantum thermometry"
+  category: submitted
+  status: submitted
+  year: "2026"
+  venue: "Physics Letters A"
+  authors:
+    - name: "Shifan Yu"
+      highlight: true
+
+- title: "The Macroscopic Heisenberg Microscope: The Standard Quantum Limit in Gravitational-Wave Detectors"
+  category: submitted
+  status: submitted
+  year: "2026"
+  venue: "American Journal of Physics"
+  authors:
+    - name: "Shifan Yu"
+      highlight: true

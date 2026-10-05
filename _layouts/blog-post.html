@@ -1,0 +1,14 @@
+---
+layout: single
+---
+<div class="blog-post-content">
+  {% if page.tags.size > 0 %}<ul class="blog-tags" aria-label="Topics">{% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>{% endif %}
+  {{ content }}
+</div>
+{% if page.previous or page.next %}
+<nav class="blog-post-navigation" aria-label="Other blog posts">
+  {% if page.previous %}<a class="blog-older" href="{{ page.previous.url | relative_url }}"><span>Older post</span>{{ page.previous.title | escape }}</a>{% endif %}
+  {% if page.next %}<a class="blog-newer" href="{{ page.next.url | relative_url }}"><span>Newer post</span>{{ page.next.title | escape }}</a>{% endif %}
+</nav>
+{% endif %}
+<p class="blog-back"><a href="{{ '/blog/' | relative_url }}">← Back to Blog</a></p>

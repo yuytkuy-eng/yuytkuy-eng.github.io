@@ -1,0 +1,28 @@
+<ul class="research-interest-groups">
+  {% for item in site.data.research %}
+  <li class="research-interest-group">
+    <h3>{{ item.title | escape }}</h3>
+    {% if item.topics and item.topics.size > 0 %}
+    <ol class="research-subtopics" role="list">
+      {% for topic in item.topics %}
+      <li>
+        <span class="research-topic-number" aria-hidden="true">({{ forloop.index }})</span>
+        <div class="research-topic-content">
+          <span>{{ topic | escape }}</span>
+          {% if topic == include.publications_topic %}
+          {% assign topic_publications = site.data.publications | where: 'research_topic', topic %}
+          {% if topic_publications.size > 0 %}
+          <ul class="selected-publication-list research-topic-publications">
+            {% for post in topic_publications %}{% include selected-publication-entry.html post=post %}{% endfor %}
+          </ul>
+          {% endif %}
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% if item.description and item.description != '' %}<p>{{ item.description | escape }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>

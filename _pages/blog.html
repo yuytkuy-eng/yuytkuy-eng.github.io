@@ -1,0 +1,34 @@
+---
+title: "Blog"
+permalink: /blog/
+author_profile: true
+description: "Notes on physics, mathematics, computing, and other things that catch my interest."
+---
+<div class="blog-page">
+  <p class="blog-intro">Notes on physics, mathematics, computing, and other things that catch my interest.</p>
+  {% assign posts = site.posts | where_exp: "post", "post.published != false" %}
+  {% if posts.size > 0 %}
+    {% assign years = posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for year in years %}
+    <section class="blog-year" aria-labelledby="year-{{ year.name }}">
+      <h2 id="year-{{ year.name }}">{{ year.name }}</h2>
+      <div class="blog-post-list">
+        {% for post in year.items %}
+        <article class="blog-entry">
+          <p class="blog-entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></p>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+          {% if post.excerpt %}<p class="blog-entry-excerpt">{{ post.excerpt | markdownify | strip_html | normalize_whitespace | truncatewords: 55 | escape }}</p>{% endif %}
+          {% if post.tags.size > 0 %}<ul class="blog-tags" aria-label="Topics">{% for tag in post.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  {% else %}
+    <div class="empty-state blog-empty">
+      <h2>No posts yet.</h2>
+      <p>I’ll share notes, ideas, and occasional reflections here.</p>
+    </div>
+  {% endif %}
+  <p class="blog-feed"><a href="{{ '/feed.xml' | relative_url }}"><i class="fa-solid fa-rss" aria-hidden="true"></i> Subscribe via RSS</a></p>
+</div>

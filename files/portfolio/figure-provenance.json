@@ -1,0 +1,88 @@
+{
+  "purpose": "Website portfolio preview; representative calculations and illustrations, not a complete reproduction audit.",
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "matplotlib": "3.11.2",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "qiskit": "2.5.2",
+    "qiskit_aer": "0.17.2"
+  },
+  "projects": [
+    {
+      "title": "Probabilistic Controlled Quantum Teleportation",
+      "repository": "https://github.com/yuytkuy-eng/probabilistic-cqt-qiskit",
+      "commit": "fd0fc02e46a8c5bf8d768fcba7dc8c2c21ab2385",
+      "figure_kind": "Simulation example",
+      "caption": "Conditional fidelity averaged over six input states. Generated with the repository’s quick settings: 1,000 shots per circuit and five noise values, using its fixed seed sequence. This preview run uses Qiskit 2.5.2 and Aer 0.17.2.",
+      "figure_data": "/files/portfolio/probabilistic-teleportation.csv"
+    },
+    {
+      "title": "Assisted Quantum Teleportation under Noise",
+      "repository": "https://github.com/yuytkuy-eng/assisted-teleportation-optima",
+      "commit": "b20636e3cb7362113c73ffee593d24c654b21677",
+      "figure_kind": "Model calculation",
+      "caption": "Conditional Haar fidelity for the Z1, XX, and XY fixed protocols under equal amplitude damping on the four resource qubits. Calculated with the repository’s evaluate function at 61 damping values; phase damping is zero.",
+      "figure_data": "/files/portfolio/assisted-teleportation.csv"
+    },
+    {
+      "title": "Gauge-Limited Quantum Thermometry",
+      "repository": "https://github.com/yuytkuy-eng/gauge-limited-quantum-thermometry",
+      "commit": "b852fbc5966a75655406e6ef790c8af920e77fb0",
+      "figure_kind": "Model calculation",
+      "caption": "Eigenvalues of the four-parameter record Fisher matrix at T = 0.90, memory angle = 0.50, system–memory angle = 0.55, and assignment errors 0.02 and 0.04, using records of length six. Values below 10⁻¹² are displayed at the indicated numerical floor.",
+      "figure_data": "/files/portfolio/quantum-thermometry.csv"
+    },
+    {
+      "title": "Moiré Flat-Band Inverse Spectroscopy",
+      "repository": "https://github.com/yuytkuy-eng/moire-flatband-inverse",
+      "commit": "c23c71a8145d754dde1dfa02a92f700efb299b8e",
+      "figure_kind": "Reference data",
+      "caption": "The two central bands of the first example listed in the frozen target pool. Energies are in the repository’s dimensionless units. This is a reference-data illustration of the reconstruction target; it does not show an inverse-solver prediction. Frozen dataset case ID: 1240.",
+      "figure_data": "/files/portfolio/moire-flat-bands.csv"
+    },
+    {
+      "title": "Nonparallel-Plane Computational Holography",
+      "repository": "https://github.com/yuytkuy-eng/nonparallel-plane-cgh",
+      "commit": "6fcd68be889d51bc859787aa7bd558ef07ae7a29",
+      "figure_kind": "Simulation example",
+      "caption": "A numerical heart reconstruction on the +35° observation plane. Generated from the dual-plane example with a 128 × 128 grid, one frame, 20 main optimization steps, and two quantization-polishing steps. This is a reduced demonstration run.",
+      "figure_data": null
+    },
+    {
+      "title": "Thermo-Optical Cavity Modeling",
+      "repository": "https://github.com/yuytkuy-eng/thermo-optical-cavity-model",
+      "commit": "2e2bc1c1db5af15ffcfc404e4aa2987905a1403b",
+      "figure_kind": "Synthetic-model example",
+      "caption": "Maximum temperature rise of mirror M1 in the repository’s synthetic four-mirror configuration. The demonstration extends the run to 10 seconds with one-second time steps; other configuration values are preserved. These are simulated values, not laboratory measurements.",
+      "figure_data": "/files/portfolio/thermo-optical-cavity.csv"
+    },
+    {
+      "title": "Exact Certificates for a Ciani Quartic Fourier Kernel",
+      "repository": "https://github.com/yuytkuy-eng/ciani-quartic-certificates",
+      "commit": "ebd3d514c6beee0877aff194ef613ade9cb4d467",
+      "figure_kind": "Mathematical visualization",
+      "caption": "Numerical positions of the 12 complex roots of the specialized branch polynomial. Both exact certificate scripts were run successfully. Root positions are drawn numerically for illustration; the plot itself is not a proof of the certified identities.",
+      "figure_data": "/files/portfolio/ciani-quartic.csv"
+    },
+    {
+      "title": "DiffractionLab",
+      "repository": "https://github.com/yuytkuy-eng/DiffractionLab",
+      "commit": "f7d67ea59f13bb1db0c9b4266965052b55927106",
+      "figure_kind": "Class-project calculation",
+      "caption": "The repository’s Huygens–Fresnel integration compared with its Fraunhofer formula: slit width 0.1 mm, wavelength 632.8 nm, distance 1 m, 512 slit samples, 801 screen positions, and no added noise. Both curves use peak-normalized intensity.",
+      "figure_data": "/files/portfolio/diffraction-lab.csv"
+    },
+    {
+      "title": "XJTU Cover Letter Template",
+      "repository": "https://github.com/yuytkuy-eng/xjtu-cover-letter-template",
+      "commit": "0f61c0e39df3defd8f172c1028f3c0d156e3270b",
+      "figure_kind": "Compiled template preview",
+      "caption": "The compiled one-page cover-letter example, showing the template’s actual layout and sample text.",
+      "figure_data": null,
+      "source": "User-provided compiled template PDF; one A4 page.",
+      "source_sha256": "ce0c904a9e8aeb2ba5a42bdf387a0b44074d34793b578f7d570c768c5a4afd1a",
+      "rendering": "Poppler pdftoppm; first page at 1800 pixels high, preserving page aspect ratio."
+    }
+  ]
+}

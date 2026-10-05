@@ -1,0 +1,23 @@
+---
+layout: single
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+{% if site.author.googlescholar and site.author.googlescholar != '' %}
+<p>My full publication record is also available on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
+{% endif %}
+{% assign published = site.data.publications | where: 'category', 'published' %}
+{% if published.size > 0 %}
+<h2>Publications (Appeared or Accepted)</h2>
+<ol class="selected-publication-list publication-list" reversed start="{{ published.size }}">
+  {% for post in published %}{% include selected-publication-entry.html post=post %}{% endfor %}
+</ol>
+{% endif %}
+{% assign submitted = site.data.publications | where: 'category', 'submitted' %}
+{% if submitted.size > 0 %}
+<h2>Submitted</h2>
+<ol class="selected-publication-list publication-list" reversed start="{{ submitted.size }}">
+  {% for post in submitted %}{% include selected-publication-entry.html post=post %}{% endfor %}
+</ol>
+{% endif %}

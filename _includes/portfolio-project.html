@@ -1,0 +1,17 @@
+{% assign project = site.data.portfolio.projects | where: 'slug', page.project | first %}
+<div class="portfolio-detail">
+  <p class="project-category">{{ project.category_name | escape }}</p>
+  <p>{{ project.overview | escape }}</p>
+  <figure class="project-figure">
+    <img src="{{ project.image | relative_url }}" width="{{ project.image_width | default: 1800 }}" height="{{ project.image_height | default: 1200 }}" alt="{{ project.caption | escape }}" decoding="async">
+    <figcaption><strong>{{ project.figure_kind | escape }}.</strong> {{ project.caption | escape }}</figcaption>
+  </figure>
+  <h2>Code and materials</h2>
+  <div class="project-resources">
+    <a href="{{ project.github }}">GitHub repository</a>
+    <a href="{{ project.readme }}">Documentation</a>
+    {% if project.paper %}<a href="{{ project.paper }}">Related paper</a>{% endif %}
+    {% if project.compiled_pdf %}<a href="{{ project.compiled_pdf | relative_url }}">Compiled example (PDF)</a>{% endif %}
+  </div>
+  <p class="project-back"><a href="{{ '/portfolio/' | relative_url }}">← Back to Portfolio</a></p>
+</div>

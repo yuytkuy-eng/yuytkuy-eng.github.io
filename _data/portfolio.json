@@ -1,0 +1,255 @@
+{
+  "intro": "A selection of research software, computational projects, class projects, and academic tools from my work in physics and mathematics.",
+  "groups": [
+    {
+      "id": "quantum-information",
+      "title": "Quantum Information"
+    },
+    {
+      "id": "computational-physics",
+      "title": "Computational Physics"
+    },
+    {
+      "id": "mathematics",
+      "title": "Mathematics"
+    },
+    {
+      "id": "class-projects",
+      "title": "Class Projects"
+    },
+    {
+      "id": "academic-tools",
+      "title": "Academic Tools"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "probabilistic-teleportation",
+      "title": "Probabilistic Controlled Quantum Teleportation",
+      "category": "quantum-information",
+      "repository": "probabilistic-cqt-qiskit",
+      "summary": "Qiskit simulations of controlled quantum teleportation using a four-qubit asymmetric entangled state, accompanying my published paper.",
+      "work": "Protocol simulation, noise analysis, and reproduction scripts.",
+      "overview": "This project implements a probabilistic protocol for teleporting an arbitrary qubit through a four-qubit asymmetric entangled resource. The repository contains the Qiskit circuits and simulations accompanying my article in International Journal of Theoretical Physics.",
+      "highlights": [
+        "Ideal-state and noisy-channel simulations.",
+        "Amplitude-damping and phase-damping sweeps.",
+        "Accepted-state distributions and circuit verification."
+      ],
+      "figure_kind": "Simulation example",
+      "caption": "Conditional fidelity averaged over six input states. Generated with the repository’s quick settings: 1,000 shots per circuit and five noise values, using its fixed seed sequence. This preview run uses Qiskit 2.5.2 and Aer 0.17.2.",
+      "paper": "https://link.springer.com/article/10.1007/s10773-026-06433-y",
+      "image": "/images/portfolio/probabilistic-teleportation.png",
+      "thumbnail": "/images/portfolio/probabilistic-teleportation-thumb.webp",
+      "url": "/portfolio/probabilistic-teleportation/",
+      "figure_data": "/files/portfolio/probabilistic-teleportation.csv",
+      "github": "https://github.com/yuytkuy-eng/probabilistic-cqt-qiskit",
+      "readme": "https://github.com/yuytkuy-eng/probabilistic-cqt-qiskit/blob/main/README.md",
+      "category_name": "Quantum Information",
+      "commit": "fd0fc02e46a8c5bf8d768fcba7dc8c2c21ab2385"
+    },
+    {
+      "slug": "assisted-teleportation",
+      "title": "Assisted Quantum Teleportation under Noise",
+      "category": "quantum-information",
+      "repository": "assisted-teleportation-optima",
+      "summary": "Density-matrix comparisons of assisted teleportation protocols under amplitude and phase damping, with receiver-filter optimization.",
+      "work": "Protocol comparisons, exact calculations, and filter optimization.",
+      "overview": "This project examines how helper measurements and receiver filtering affect teleportation under noise. It compares conditional fidelity with acceptance-weighted performance relative to the classical benchmark.",
+      "highlights": [
+        "Exact density-matrix calculations and fixed-protocol verification.",
+        "Adaptive diagonal receiver filters and acceptance frontiers.",
+        "Numerical comparisons within the protocol families specified in the repository."
+      ],
+      "figure_kind": "Model calculation",
+      "caption": "Conditional Haar fidelity for the Z1, XX, and XY fixed protocols under equal amplitude damping on the four resource qubits. Calculated with the repository’s evaluate function at 61 damping values; phase damping is zero.",
+      "paper": null,
+      "image": "/images/portfolio/assisted-teleportation.png",
+      "thumbnail": "/images/portfolio/assisted-teleportation-thumb.webp",
+      "url": "/portfolio/assisted-teleportation/",
+      "figure_data": "/files/portfolio/assisted-teleportation.csv",
+      "github": "https://github.com/yuytkuy-eng/assisted-teleportation-optima",
+      "readme": "https://github.com/yuytkuy-eng/assisted-teleportation-optima/blob/main/README.md",
+      "category_name": "Quantum Information",
+      "commit": "b20636e3cb7362113c73ffee593d24c654b21677"
+    },
+    {
+      "slug": "quantum-thermometry",
+      "title": "Gauge-Limited Quantum Thermometry",
+      "category": "quantum-information",
+      "repository": "gauge-limited-quantum-thermometry",
+      "summary": "Computational studies of temperature estimation with memory, unknown detector errors, and robust calibration.",
+      "work": "Identifiability analysis, statistical inference, and calibration design.",
+      "overview": "This project studies collisional quantum thermometry when detector assignment errors are unknown. The code examines the resulting detector–temperature ambiguity, methods for breaking it, inference from finite records, and calibration allocations under parameter uncertainty.",
+      "highlights": [
+        "Collision dynamics and record-probability calculations.",
+        "Fisher-information and identifiability analysis.",
+        "Finite-sample inference and robust experimental-design studies."
+      ],
+      "figure_kind": "Model calculation",
+      "caption": "Eigenvalues of the four-parameter record Fisher matrix at T = 0.90, memory angle = 0.50, system–memory angle = 0.55, and assignment errors 0.02 and 0.04, using records of length six. Values below 10⁻¹² are displayed at the indicated numerical floor.",
+      "paper": null,
+      "image": "/images/portfolio/quantum-thermometry.png",
+      "thumbnail": "/images/portfolio/quantum-thermometry-thumb.webp",
+      "url": "/portfolio/quantum-thermometry/",
+      "figure_data": "/files/portfolio/quantum-thermometry.csv",
+      "github": "https://github.com/yuytkuy-eng/gauge-limited-quantum-thermometry",
+      "readme": "https://github.com/yuytkuy-eng/gauge-limited-quantum-thermometry/blob/main/README.md",
+      "category_name": "Quantum Information",
+      "commit": "b852fbc5966a75655406e6ef790c8af920e77fb0"
+    },
+    {
+      "slug": "moire-flat-bands",
+      "title": "Moiré Flat-Band Inverse Spectroscopy",
+      "category": "computational-physics",
+      "repository": "moire-flatband-inverse",
+      "summary": "A hybrid inverse solver combining learned initialization and physics-based correction to recover moiré flat bands.",
+      "work": "Inverse-model development, benchmark design, and numerical comparisons.",
+      "overview": "This project investigates the recovery of moiré flat bands from remote dispersive-band energies in a continuum model with uniform heterostrain. A learned parameter encoder supplies an initial estimate, which is corrected by minimizing the physical model’s remote-band residual.",
+      "highlights": [
+        "A frozen synthetic benchmark with registered data splits.",
+        "Comparisons with neural and classical inverse methods.",
+        "Studies of noise, model mismatch, and computational cost."
+      ],
+      "figure_kind": "Reference data",
+      "caption": "The two central bands of the first example listed in the frozen target pool. Energies are in the repository’s dimensionless units. This is a reference-data illustration of the reconstruction target; it does not show an inverse-solver prediction. Frozen dataset case ID: 1240.",
+      "paper": null,
+      "image": "/images/portfolio/moire-flat-bands.png",
+      "thumbnail": "/images/portfolio/moire-flat-bands-thumb.webp",
+      "url": "/portfolio/moire-flat-bands/",
+      "figure_data": "/files/portfolio/moire-flat-bands.csv",
+      "github": "https://github.com/yuytkuy-eng/moire-flatband-inverse",
+      "readme": "https://github.com/yuytkuy-eng/moire-flatband-inverse/blob/main/README.md",
+      "category_name": "Computational Physics",
+      "commit": "c23c71a8145d754dde1dfa02a92f700efb299b8e"
+    },
+    {
+      "slug": "computational-holography",
+      "title": "Nonparallel-Plane Computational Holography",
+      "category": "computational-physics",
+      "repository": "nonparallel-plane-cgh",
+      "summary": "Phase-only holographic reconstruction on parallel and tilted observation planes, including dual-plane examples.",
+      "work": "Phase optimization, reconstruction simulations, and SLM playback tools.",
+      "overview": "This project explores phase-only computer-generated holography on parallel, single-tilted, and dual-tilted observation planes. The implementation combines angular-spectrum rearrangement with iterative phase optimization, quantization-aware refinement, and optional spatial-light-modulator playback.",
+      "highlights": [
+        "Parallel-plane and single-tilted-plane numerical examples.",
+        "Static and animated reconstructions on two tilted planes.",
+        "Phase-frame export and optional hardware playback."
+      ],
+      "figure_kind": "Simulation example",
+      "caption": "A numerical heart reconstruction on the +35° observation plane. Generated from the dual-plane example with a 128 × 128 grid, one frame, 20 main optimization steps, and two quantization-polishing steps. This is a reduced demonstration run.",
+      "paper": null,
+      "image": "/images/portfolio/computational-holography.png",
+      "thumbnail": "/images/portfolio/computational-holography-thumb.webp",
+      "url": "/portfolio/computational-holography/",
+      "figure_data": null,
+      "github": "https://github.com/yuytkuy-eng/nonparallel-plane-cgh",
+      "readme": "https://github.com/yuytkuy-eng/nonparallel-plane-cgh/blob/main/README.md",
+      "category_name": "Computational Physics",
+      "commit": "6fcd68be889d51bc859787aa7bd558ef07ae7a29"
+    },
+    {
+      "slug": "thermo-optical-cavity",
+      "title": "Thermo-Optical Cavity Modeling",
+      "category": "computational-physics",
+      "repository": "thermo-optical-cavity-model",
+      "summary": "A coupled model of circulating light, absorbed heat, mirror deformation, and cavity modes in high-finesse ring cavities.",
+      "work": "Multiphysics modeling, a configurable solver, and a synthetic example.",
+      "overview": "This Python model follows the coupled optical, thermal, and elastic response of a ring cavity. It accounts for mirror-resolved loss, heating, thermoelastic deformation, coating response, and the changing cavity mode, with an optional sampled-field solver.",
+      "highlights": [
+        "A causal loop coupling the optical, thermal, and elastic models.",
+        "Configurable mirror geometry, material, coating, and support parameters.",
+        "Traceable time-series outputs from JSON-defined simulations."
+      ],
+      "figure_kind": "Synthetic-model example",
+      "caption": "Maximum temperature rise of mirror M1 in the repository’s synthetic four-mirror configuration. The demonstration extends the run to 10 seconds with one-second time steps; other configuration values are preserved. These are simulated values, not laboratory measurements.",
+      "paper": null,
+      "image": "/images/portfolio/thermo-optical-cavity.png",
+      "thumbnail": "/images/portfolio/thermo-optical-cavity-thumb.webp",
+      "url": "/portfolio/thermo-optical-cavity/",
+      "figure_data": "/files/portfolio/thermo-optical-cavity.csv",
+      "github": "https://github.com/yuytkuy-eng/thermo-optical-cavity-model",
+      "readme": "https://github.com/yuytkuy-eng/thermo-optical-cavity-model/blob/main/README.md",
+      "category_name": "Computational Physics",
+      "commit": "2e2bc1c1db5af15ffcfc404e4aa2987905a1403b"
+    },
+    {
+      "slug": "ciani-quartic",
+      "title": "Exact Certificates for a Ciani Quartic Fourier Kernel",
+      "category": "mathematics",
+      "repository": "ciani-quartic-certificates",
+      "summary": "Exact symbolic computations supporting a study of fourth Schatten moments of a Ciani quartic Fourier kernel.",
+      "work": "Symbolic certificates for branch and fibre identities.",
+      "overview": "This repository contains the symbolic computations supporting my study of fourth Schatten moments of a Ciani quartic Fourier kernel over multiplicative cosets. Its two certificate scripts verify the branch-divisor Sidon property and identities used in the branch-fibre argument with exact arithmetic.",
+      "highlights": [
+        "Exact computations over Gaussian rational and rational polynomial fields.",
+        "Branch-divisor and discriminant certificates.",
+        "Fibre bounds, eliminations, and exceptional-prime calculations."
+      ],
+      "figure_kind": "Mathematical visualization",
+      "caption": "Numerical positions of the 12 complex roots of the specialized branch polynomial. Both exact certificate scripts were run successfully. Root positions are drawn numerically for illustration; the plot itself is not a proof of the certified identities.",
+      "paper": null,
+      "image": "/images/portfolio/ciani-quartic.png",
+      "thumbnail": "/images/portfolio/ciani-quartic-thumb.webp",
+      "url": "/portfolio/ciani-quartic/",
+      "figure_data": "/files/portfolio/ciani-quartic.csv",
+      "github": "https://github.com/yuytkuy-eng/ciani-quartic-certificates",
+      "readme": "https://github.com/yuytkuy-eng/ciani-quartic-certificates/blob/main/README.md",
+      "category_name": "Mathematics",
+      "commit": "ebd3d514c6beee0877aff194ef613ade9cb4d467"
+    },
+    {
+      "slug": "diffraction-lab",
+      "title": "DiffractionLab",
+      "category": "class-projects",
+      "repository": "DiffractionLab",
+      "summary": "A class project: an interactive virtual laboratory for exploring single-slit diffraction and comparing numerical methods.",
+      "work": "Numerical diffraction methods, an interactive interface, and report generation.",
+      "overview": "DiffractionLab is a class project developed as a small virtual laboratory for single-slit diffraction. It lets users vary optical and numerical parameters, compare numerical calculations with the Fraunhofer approximation, examine convergence, and export experiment reports.",
+      "highlights": [
+        "Huygens–Fresnel integration, FFT propagation, and a Fraunhofer benchmark.",
+        "Adjustable parameters and guided numerical experiments.",
+        "Convergence plots, visualizations, and self-contained HTML reports."
+      ],
+      "figure_kind": "Class-project calculation",
+      "caption": "The repository’s Huygens–Fresnel integration compared with its Fraunhofer formula: slit width 0.1 mm, wavelength 632.8 nm, distance 1 m, 512 slit samples, 801 screen positions, and no added noise. Both curves use peak-normalized intensity.",
+      "paper": null,
+      "image": "/images/portfolio/diffraction-lab.png",
+      "thumbnail": "/images/portfolio/diffraction-lab-thumb.webp",
+      "url": "/portfolio/diffraction-lab/",
+      "figure_data": "/files/portfolio/diffraction-lab.csv",
+      "github": "https://github.com/yuytkuy-eng/DiffractionLab",
+      "readme": "https://github.com/yuytkuy-eng/DiffractionLab/blob/main/README.md",
+      "category_name": "Class Projects",
+      "commit": "f7d67ea59f13bb1db0c9b4266965052b55927106"
+    },
+    {
+      "slug": "xjtu-cover-letter",
+      "title": "XJTU Cover Letter Template",
+      "category": "academic-tools",
+      "repository": "xjtu-cover-letter-template",
+      "summary": "An unofficial LaTeX cover-letter template adapted for authors at Xi’an Jiaotong University.",
+      "work": "Template adaptation, layout revisions, and usage documentation.",
+      "overview": "This project adapts a LaTeX cover-letter layout for authors at Xi’an Jiaotong University. It provides an editable starting point for journal submissions and other formal academic correspondence, with instructions for Overleaf and local compilation.",
+      "highlights": [
+        "Editable text and academic-letter formatting.",
+        "Overleaf and local-compilation instructions.",
+        "Adapted from the template credited in the repository; an unofficial resource."
+      ],
+      "figure_kind": "Compiled template preview",
+      "caption": "The compiled one-page cover-letter example, showing the template’s actual layout and sample text.",
+      "paper": null,
+      "image": "/images/portfolio/xjtu-cover-letter.png",
+      "thumbnail": "/images/portfolio/xjtu-cover-letter-thumb.webp",
+      "url": "/portfolio/xjtu-cover-letter/",
+      "figure_data": null,
+      "github": "https://github.com/yuytkuy-eng/xjtu-cover-letter-template",
+      "readme": "https://github.com/yuytkuy-eng/xjtu-cover-letter-template/blob/main/README.md",
+      "category_name": "Academic Tools",
+      "commit": "0f61c0e39df3defd8f172c1028f3c0d156e3270b",
+      "image_width": 1273,
+      "image_height": 1800,
+      "compiled_pdf": "/files/portfolio/xjtu-cover-letter.pdf"
+    }
+  ]
+}

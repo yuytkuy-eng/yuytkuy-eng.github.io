@@ -1,0 +1,17 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <nav class="academic-nav" aria-label="Main navigation">
+      <a class="site-name" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>{{ site.title | escape }}</a>
+      <div class="nav-actions">
+        <button class="theme-button" type="button" aria-label="Switch to dark mode" title="Switch color theme"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i></button>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="academic-menu">Menu</button>
+      </div>
+      <ul id="academic-menu" class="academic-menu">
+        {% for link in site.data.navigation.main %}
+        <li><a href="{{ link.url | relative_url }}"{% if page.url == link.url or link.url != '/' and page.url contains link.url %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</div>

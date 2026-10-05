@@ -1,0 +1,24 @@
+<div class="profile" itemscope itemtype="https://schema.org/Person">
+  <div class="profile-portrait">
+    {% if site.author.avatar and site.author.avatar != '' %}
+      {% if site.author.avatar contains '://' %}{% assign portrait_url = site.author.avatar %}
+      {% else %}{% assign portrait_url = site.author.avatar | prepend: '/images/' | relative_url %}{% endif %}
+      <img src="{{ portrait_url }}" alt="{{ site.author.name | escape }}" width="168" height="168" fetchpriority="high">
+    {% else %}
+      <div class="portrait-placeholder" aria-label="Profile photo placeholder"><span>Your photo</span></div>
+    {% endif %}
+  </div>
+  <div class="profile-info">
+    <h2 class="profile-name" itemprop="name">{{ site.author.name | escape }}{% if site.author.name_zh %} <span lang="zh">({{ site.author.name_zh | escape }})</span>{% endif %}</h2>
+    {% if site.author.bio %}<p class="profile-bio">{{ site.author.bio | escape }}</p>{% endif %}
+    <ul class="profile-links">
+      {% if site.author.location %}<li class="profile-detail"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{{ site.author.location | escape }}</span></li>{% endif %}
+      {% if site.author.employer %}<li class="profile-detail"><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span itemprop="affiliation">{{ site.author.employer | escape }}</span></li>{% endif %}
+      {% if site.author.email %}<li><a href="mailto:{{ site.author.email }}" title="{{ site.author.email | escape }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>{% endif %}
+      {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></li>{% endif %}
+      {% if site.author.orcid %}<li><a href="{{ site.author.orcid }}"><i class="fa-brands fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li>{% endif %}
+      {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a></li>{% endif %}
+      {% if site.data.cv.pdf and site.data.cv.pdf != '' %}<li><a href="{{ site.data.cv.pdf | relative_url }}" target="_blank" rel="noopener" title="View CV (PDF)"><i class="fa-regular fa-file-lines" aria-hidden="true"></i><span>Curriculum vitae</span></a></li>{% endif %}
+    </ul>
+  </div>
+</div>

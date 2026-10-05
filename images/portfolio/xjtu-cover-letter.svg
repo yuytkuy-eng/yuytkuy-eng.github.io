@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="288pt" viewBox="0 0 432 288" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-05T22:43:57.641611</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 288 
+L 432 288 
+L 432 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 127.872 232.128 
+L 355.968 232.128 
+L 355.968 46.656 
+L 127.872 46.656 
+z
+" clip-path="url(#pc68b119594)" style="fill: #ffffff; stroke: #c9d4dd; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 127.872 72.864 
+L 355.968 72.864 
+L 355.968 46.656 
+L 127.872 46.656 
+z
+" clip-path="url(#pc68b119594)" style="fill: #edf3f7"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 148.608 77.904 
+L 335.232 77.904 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #246487; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 148.608 121.248 
+L 321.408 121.248 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #b4c1cb; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 148.608 128.304 
+L 307.584 128.304 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #b4c1cb; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 148.608 135.36 
+L 317.952 135.36 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #b4c1cb; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 148.608 142.416 
+L 290.304 142.416 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #b4c1cb; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 148.608 155.52 
+L 314.496 155.52 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #b4c1cb; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 148.608 162.576 
+L 317.952 162.576 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #b4c1cb; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 148.608 169.632 
+L 276.48 169.632 
+" clip-path="url(#pc68b119594)" style="fill: none; stroke: #b4c1cb; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #246487" x="241.92" y="62.865352" transform="rotate(-0 241.92 62.865352)">Xi’an Jiaotong University</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #34495b" x="148.608" y="88.992" transform="rotate(-0 148.608 88.992)">Academic cover letter</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #34495b" x="148.608" y="106.128" transform="rotate(-0 148.608 106.128)">Dear Editor,</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #34495b" x="148.608" y="191.808" transform="rotate(-0 148.608 191.808)">Sincerely,</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6a7986" x="148.608" y="203.904" transform="rotate(-0 148.608 203.904)">Author name</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc68b119594">
+   <rect x="69.12" y="34.56" width="345.6" height="201.6"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,16 @@
+{% assign publication = include.post %}
+{% assign paper_link = publication.paperurl %}
+{% if paper_link == nil or paper_link == '' %}{% if publication.doi and publication.doi != '' %}{% assign paper_link = publication.doi | prepend: 'https://doi.org/' %}{% endif %}{% endif %}
+{% assign publication_year = publication.year %}
+{% if publication_year == nil or publication_year == '' %}{% assign publication_year = publication.date | date: '%Y' %}{% endif %}
+<li class="selected-publication-entry">
+  {% if publication.authors %}<span class="selected-publication-authors">{% for author in publication.authors %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}{% if author.highlight %}<strong>{{ author.name | escape }}</strong>{% else %}{{ author.name | escape }}{% endif %}{% endfor %},</span>{% endif %}
+  <span class="selected-publication-title">{% if paper_link and paper_link != '' %}<a class="publication-title-link" href="{{ paper_link | relative_url }}">{{ publication.title | escape }}</a>{% else %}{{ publication.title | escape }}{% endif %}</span>,
+  {% if publication.category == 'submitted' %}
+    {{ publication_year | escape }}.
+  {% elsif publication.status == 'accepted' %}
+    {{ publication.venue | escape }}, accepted.
+  {% else %}
+    {{ publication.venue | escape }}{% if publication.volume %}, {{ publication.volume | escape }}{% endif %} ({{ publication_year | escape }}){% if publication.article_number %}, article {{ publication.article_number | escape }}{% endif %}.
+  {% endif %}
+</li>

@@ -1,0 +1,6 @@
+# Optional image descriptions. The filename must match a file in images/gallery/.
+# - filename: "2026-10-06-example.jpg"
+#   title: "A short title"
+#   caption: "A short description of the image."
+#   alt: "Describe what is visible in the image."
+[]

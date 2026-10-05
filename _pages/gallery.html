@@ -1,0 +1,54 @@
+---
+title: "Gallery"
+permalink: /gallery/
+author_profile: true
+gallery: true
+description: "Images from my work and everyday life."
+---
+<div class="gallery-page">
+  <p class="gallery-intro">Images from my work and everyday life.</p>
+  {% assign files = site.static_files | sort: "path" | reverse %}
+  {% assign extensions = ".jpg,.jpeg,.png,.webp,.gif,.avif," %}
+  {% assign image_count = 0 %}
+  {% capture gallery_items %}
+    {% for file in files %}
+      {% assign parts = file.path | split: "/" %}
+      {% assign extension = file.extname | downcase | append: "," %}
+      {% if parts[1] == "images" and parts[2] == "gallery" and parts.size == 4 and extensions contains extension %}
+        {% assign image_count = image_count | plus: 1 %}
+        {% assign metadata = site.data.gallery | where: "filename", file.name | first %}
+        {% assign fallback_title = file.name | remove: file.extname | replace: "-", " " | replace: "_", " " %}
+        {% assign title = metadata.title | default: fallback_title %}
+        {% assign alt = metadata.alt | default: title %}
+        <figure class="gallery-item">
+          <a class="gallery-image-link" href="{{ file.path | relative_url | uri_escape | escape }}" data-gallery-image data-title="{{ title | escape }}" data-caption="{{ metadata.caption | escape }}" aria-label="View {{ title | escape }}">
+            <img src="{{ file.path | relative_url | uri_escape | escape }}" alt="{{ alt | escape }}" loading="lazy" decoding="async" width="640" height="480">
+          </a>
+          <figcaption><span class="gallery-item-title">{{ title | escape }}</span>{% if metadata.caption %}<span class="gallery-item-caption">{{ metadata.caption | escape }}</span>{% endif %}</figcaption>
+        </figure>
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+  {% if image_count > 0 %}
+    <div class="gallery-grid">{{ gallery_items }}</div>
+    <p class="gallery-hint">Select an image to view it in full.</p>
+    <dialog class="gallery-dialog" aria-label="Image viewer">
+      <div class="gallery-dialog-bar">
+        <span class="gallery-position" aria-live="polite"></span>
+        <button type="button" class="gallery-control gallery-close" aria-label="Close image viewer" autofocus><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+      <div class="gallery-dialog-image-wrap"><img class="gallery-dialog-image" alt=""><p class="gallery-image-error" hidden>This image could not be loaded. Please try the original image link below.</p></div>
+      <div class="gallery-dialog-details">
+        <p class="gallery-dialog-title"></p>
+        <p class="gallery-dialog-caption" hidden></p>
+        <div class="gallery-dialog-controls">
+          <button type="button" class="gallery-control gallery-previous" aria-label="Previous image"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+          <a class="gallery-original" href="">Open original image</a>
+          <button type="button" class="gallery-control gallery-next" aria-label="Next image"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </dialog>
+  {% else %}
+    <div class="empty-state gallery-empty"><h2>No images yet.</h2><p>I’ll share photos and other images here.</p></div>
+  {% endif %}
+</div>

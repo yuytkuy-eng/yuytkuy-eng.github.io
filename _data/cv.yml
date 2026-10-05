@@ -1,0 +1,16 @@
+# Add real entries when you are ready; empty sections show a neutral message.
+# education: [{degree: "Ph.D. in ...", institution: "...", period: "2023–present", details: "..."}]
+education:
+  - degree: "Undergraduate"
+    institution: "Xi'an Jiaotong University"
+    details: "School of Physics"
+# experience: [{role: "...", institution: "...", period: "...", details: "..."}]
+experience: []
+# awards: [{title: "...", organization: "...", year: "..."}]
+awards: []
+# service: [{role: "...", organization: "...", period: "..."}]
+service: []
+# skills: ["...", "..."]
+skills: []
+# Set only after placing an actual file in files/, e.g. /files/cv.pdf.
+pdf: "/files/CV.pdf"

@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="{{ '/assets/css/fontawesome.css' | relative_url }}">
+<link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+<meta name="theme-color" content="#183a5e">
+<script>
+try {
+  var preference = localStorage.getItem('academic-theme');
+  var dark = preference ? preference === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+} catch (error) {}
+</script>
