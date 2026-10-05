@@ -3,4 +3,11 @@
 #   title: "A short title"
 #   caption: "A short description of the image."
 #   alt: "Describe what is visible in the image."
-[]
+- filename: "2026-10-06-02-campus-panorama.png"
+  title: "Campus panorama"
+  caption: "Autumn trees and campus buildings beneath a blue sky."
+  alt: "A panoramic view of campus buildings, autumn trees, and the city skyline beneath a blue sky."
+- filename: "2026-10-06-01-cyrus-tang-building.png"
+  title: "Cyrus Tang Building"
+  caption: "The Cyrus Tang Building framed by autumn foliage."
+  alt: "The facade of the Cyrus Tang Building, labelled in Chinese and English, with autumn trees in the foreground."
