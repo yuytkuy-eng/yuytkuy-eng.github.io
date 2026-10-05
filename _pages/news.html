@@ -1,0 +1,24 @@
+---
+title: "News archive"
+permalink: /news/
+author_profile: true
+description: "News and updates from Shifan Yu."
+---
+<div class="news-page">
+  {% assign news = site.data.news | sort: 'date' | reverse %}
+  {% if news.size > 0 %}
+    {% assign years = news | group_by_exp: "item", "item.date | date: '%Y'" %}
+    {% for year in years %}
+    <section class="news-year" aria-labelledby="news-year-{{ year.name }}">
+      <h2 id="news-year-{{ year.name }}">{{ year.name }}</h2>
+      <ul class="news-list">
+        {% for item in year.items %}
+          {% include news-entry.html item=item date_format="%b %-d" %}
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  {% else %}
+    <p class="muted">Research updates will appear here.</p>
+  {% endif %}
+</div>

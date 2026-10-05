@@ -28,12 +28,15 @@ author_profile: true
 
 ## News
 
-{% if site.data.news.size > 0 %}
+{% assign news = site.data.news | sort: 'date' | reverse %}
+{% if news.size > 0 %}
 <ul class="news-list">
-{% for item in site.data.news %}
-  <li><time datetime="{{ item.date }}">{{ item.date | date: '%b %Y' }}</time><span>{{ item.text | markdownify }}</span></li>
+{% for item in news limit:5 %}
+  {% include news-entry.html item=item date_format="%b %Y" %}
 {% endfor %}
 </ul>
+
+<a class="text-link" href="{{ '/news/' | relative_url }}">All news</a>
 {% else %}
 <p class="muted">Research updates will appear here.</p>
 {% endif %}

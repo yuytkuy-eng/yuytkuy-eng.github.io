@@ -7,4 +7,5 @@ permalink: /sitemap/
   {% for link in site.data.navigation.main %}
   <li><a href="{{ link.url | relative_url }}">{{ link.title | escape }}</a></li>
   {% endfor %}
+  <li><a href="{{ '/news/' | relative_url }}">News archive</a></li>
 </ul>

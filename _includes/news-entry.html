@@ -1,0 +1,4 @@
+<li class="news-entry">
+  <time datetime="{{ include.item.date | escape }}">{{ include.item.date | date: include.date_format }}</time>
+  <div class="news-entry-content">{{ include.item.text | markdownify }}</div>
+</li>

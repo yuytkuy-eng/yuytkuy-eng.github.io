@@ -25,7 +25,8 @@
 | Gallery 图片标题、说明和替代文字（可选） | `_data/gallery.yml` |
 | Research 页中与具体方向关联的论文 | `_data/publications.yml` → `research_topic` |
 | 个人信息栏的简历 PDF 附件 | `_data/cv.yml` → `pdf` |
-| 新闻 | `_data/news.yml` |
+| 新闻内容 | `_data/news.yml` |
+| 首页新闻与完整归档 | `_pages/home.md`、`_pages/news.html`、`_includes/news-entry.html` |
 | 地址 | `_data/contact.yml` |
 | 导航 | `_data/navigation.yml` |
 | 额外样式 | `_sass/_academic.scss` |
@@ -37,14 +38,14 @@
 
 ## News 更新
 
-编辑 `_data/news.yml`，把 `[]` 替换为以下格式，每条新闻包含日期和正文，最新条目放在最上面：
+编辑 `_data/news.yml`，按以下格式添加条目，每条新闻包含日期和正文。日期使用带引号的 `YYYY-MM-DD` 格式，正文支持 Markdown：
 
 ```yaml
 - date: "2026-10-06"
   text: "A real update about your work, with an optional [link](https://example.com)."
 ```
 
-提交修改到 `main` 后，首页 News 会随网站发布更新。这里的示例只用于说明格式，不会出现在网页上。
+首页 News 自动按日期倒序显示最新 5 条，点击下方的 **All news** 可查看 `/news/` 的完整归档。归档按年份分组，年份和新闻均由新到旧排列；旧消息无需删除或手动搬移。提交修改到 `main` 后，首页和归档会随网站发布一起更新。这里的示例只用于说明格式，不会出现在网页上。
 
 ## Blog 文章
 
