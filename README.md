@@ -34,7 +34,11 @@
 联系方式和下载链接为空时自动隐藏。个人信息栏的 Curriculum vitae 链接指向 `files/CV.pdf`，可直接替换此附件；链接路径在 `_data/cv.yml` 的 `pdf: /files/CV.pdf` 中配置。
 三处论文展示共用 `_data/publications.yml` 和同一条目格式：作者全名、论文题名链接、期刊名及发表信息。作者的 `highlight: true` 加粗姓名。资料按显示顺序维护，Publications 页每个栏目独立倒序编号；`category` 设为 `published` 或 `submitted`，`status` 设为 `published`、`accepted`、`submitted` 或 `under_review`。只有已有公开链接的题名会显示链接。模板中的示例论文不用于正式页面。
 
-页脚的 Total page views 使用[不蒜子](https://ibruce.info/2015/04/04/busuanzi/)统计全站累计浏览次数。仅在 `_config.yml` 的 `url` 所指定的正式域名上启用，本地和其他预览地址不计数。尚未上线或计数服务无法读取时显示 `—`；它表示暂无数据，而非零次访问。更换正式域名时应同步更新 `url`，计数也会随域名变化。
+页脚的 Total page views 使用[持续维护的不蒜子版本](https://github.com/soxft/busuanzi)及其 `https://busuanzi.9420.ltd/api` 接口统计全站累计浏览次数（PV，并非独立访客人数）。原 `busuanzi.ibruce.info` 接口持续返回错误或超时，因此于 2026-10-06 更换服务；新旧服务数据独立，新计数从本次更换后开始，不虚构或自动补加无法读取的历史访问量。
+
+仅在 `_config.yml` 的 `url` 所指定的正式域名上启用，本地和其他预览地址不计数。每次页面加载只发出一次计数请求；失败后会重试读取数字，恢复读取不会重复增加访问量。最近一次成功读取的真实数字缓存在访客浏览器中；网络或服务暂时不可用时继续显示缓存数字，悬停提示它是上次可用的值。没有缓存时显示 `—`，表示暂时无法读取数据，而非零次访问。浏览器禁用存储时仍能正常请求统计。更换正式域名时应同步更新 `url`，计数也会随域名变化。
+
+可运行 `node --test scripts/visitor-counter.test.cjs` 检查成功计数、失败恢复、超时、缓存及预览地址隔离。
 
 ## News 更新
 
