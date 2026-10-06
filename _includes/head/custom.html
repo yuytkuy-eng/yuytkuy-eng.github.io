@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/fontawesome.css' | relative_url }}">
 <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
 <meta name="theme-color" content="#183a5e">
+{% if page.research_note %}<link rel="stylesheet" href="{{ '/assets/css/research-note.css' | relative_url }}">{% endif %}
 <script>
 try {
   var preference = localStorage.getItem('academic-theme');

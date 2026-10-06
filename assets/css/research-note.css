@@ -1,0 +1,20 @@
+/* Long-form research notes, using the homepage's existing theme tokens. */
+.research-note .note-section { scroll-margin-top: 24px; }
+.page__content .research-note .note-section h2 { line-height: 1.45; margin: 50px 0 20px; padding: 0 0 14px; }
+.research-note .conjecture-number { display: block; color: var(--global-text-color-light); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+.research-note .conjecture-statement { background: var(--academic-soft); border-left: 3px solid var(--global-link-color); padding: 18px 22px; margin: 0 0 28px; }
+.research-note .conjecture-statement p:last-child { margin-bottom: 0; }
+.page__content .research-note h3 { color: var(--academic-title); font-size: 17px; margin: 28px 0 12px; line-height: 1.5; }
+.research-note ol { padding-left: 24px; }
+.research-note li { margin-bottom: 9px; }
+.research-note .note-equation { max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: 14px 0 22px; padding: 8px 4px; }
+.research-note mjx-container[display="true"] { margin: 0 !important; }
+@media (max-width: 700px) {
+  .research-note .conjecture-statement { padding: 16px; }
+  .page__content .research-note .note-section h2 { font-size: 21px; margin-top: 40px; }
+  .research-note .note-equation { font-size: .92em; }
+}
+@media print {
+  .research-note .conjecture-statement { break-inside: avoid; }
+  .research-note .note-equation { overflow: visible; }
+}

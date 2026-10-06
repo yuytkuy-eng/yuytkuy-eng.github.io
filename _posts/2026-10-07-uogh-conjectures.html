@@ -1,0 +1,248 @@
+---
+title: "Seven Conjectures on the Universal Operator Growth Hypothesis"
+date: 2026-10-07 00:00:00 +0800
+excerpt: "Candidate research conjectures on Krylov crossover, operator universality, integrability breaking, subleading structure, spectral tails, local counterexamples, and probabilistic UOGH."
+tags: [Quantum Dynamics, Krylov Complexity, Research Notes]
+published: true
+mathjax: true
+research_note: true
+permalink: /blog/uogh-conjectures/
+---
+
+<div class="research-note" lang="en">
+  <section id="background" class="note-section">
+    <h2>Background and notation</h2>
+    <p>Consider a local many-body Hamiltonian \(H\) and a local initial operator \(O\). Define the Liouvillian</p>
+    <div class="note-equation">\[\mathcal{L}=[H,\cdot].\]</div>
+    <p>Lanczos orthogonalization of the Krylov sequence</p>
+    <div class="note-equation">\[O,\quad \mathcal{L}O,\quad \mathcal{L}^{2}O,\quad \ldots\]</div>
+    <p>gives a Krylov basis and Lanczos coefficients \(\{b_n\}_{n\geq 1}\). The target UOGH asymptotic form used in these notes is</p>
+    <div class="note-equation">\[b_n\sim\begin{cases}\alpha n,&amp; d&gt;1,\\[4pt] A\dfrac{n}{\ln n},&amp; d=1.\end{cases}\]</div>
+    <p>Here \(d\) is the spatial dimension, and \(\alpha&gt;0\) or \(A&gt;0\) is the growth-rate parameter.</p>
+  </section>
+
+  <section id="conjecture-1" class="note-section">
+    <h2><span class="conjecture-number">Conjecture 1</span>Krylov Crossover Conjecture</h2>
+    <div class="conjecture-statement">
+      <p>Let</p>
+      <div class="note-equation">\[H(g)=H_{\mathrm{int}}+gV\]</div>
+      <p>be a family of local many-body Hamiltonians, where \(H_{\mathrm{int}}\) is integrable and \(V\) is a local perturbation such that the system is nonintegrable for every \(g\neq 0\). Let \(O\) be a local operator orthogonal to all relevant conserved quantities. Then, for every fixed \(g\neq 0\), there exists a finite crossover scale \(n_*(g)\) such that the Lanczos coefficients enter the UOGH asymptotic regime for \(n\gg n_*(g)\), while</p>
+      <div class="note-equation">\[\lim_{g\to 0^+}n_*(g)=\infty.\]</div>
+    </div>
+    <h3>Assumptions</h3>
+    <ol>
+      <li>\(H(g)\) is local.</li>
+      <li>\(H(0)=H_{\mathrm{int}}\) is integrable.</li>
+      <li>\(H(g)\) is nonintegrable for every \(g\neq 0\) in the parameter regime under consideration.</li>
+      <li>\(O\) is local and satisfies \((O|Q_a)=0\) for all relevant conserved quantities \(Q_a\).</li>
+    </ol>
+    <h3>Definitions</h3>
+    <p>Define</p>
+    <div class="note-equation">\[\mathcal{L}_g=[H(g),\cdot],\]</div>
+    <p>and let \(b_n(g)\) be the Lanczos coefficients generated from the sequence</p>
+    <div class="note-equation">\[O,\quad \mathcal{L}_g O,\quad \mathcal{L}_g^2 O,\quad \ldots.\]</div>
+    <p>For fixed tolerance \(\varepsilon&gt;0\), define the UOGH reference form</p>
+    <div class="note-equation">\[f_g(n)=\begin{cases}\alpha(g)n,&amp; d&gt;1,\\[4pt] A(g)\dfrac{n}{\ln n},&amp; d=1,\end{cases}\]</div>
+    <p>and define \(n_*(g;\varepsilon)\) as the smallest index such that</p>
+    <div class="note-equation">\[\left|\frac{b_n(g)}{f_g(n)}-1\right|&lt;\varepsilon\]</div>
+    <p>for all \(n&gt;n_*(g;\varepsilon)\).</p>
+    <h3>Claim</h3>
+    <p>For every fixed \(g\neq 0\),</p>
+    <div class="note-equation">\[n_*(g;\varepsilon)&lt;\infty,\]</div>
+    <p>while</p>
+    <div class="note-equation">\[\lim_{g\to 0^+}n_*(g;\varepsilon)=\infty.\]</div>
+    <p>Thus arbitrarily weak integrability breaking eventually produces the UOGH asymptotic class, but the Krylov depth required to observe it diverges when the integrable point is approached.</p>
+    <h3>Strong Conjecture 1</h3>
+    <p>The crossover scale obeys a universal scaling law near the integrable point, for example</p>
+    <div class="note-equation">\[n_*(g)\sim g^{-\nu}\]</div>
+    <p>or, in another universality class,</p>
+    <div class="note-equation">\[n_*(g)\sim[\ln(1/g)]^{\eta},\]</div>
+    <p>where the exponents are determined by the universality class of the integrability-breaking perturbation rather than by microscopic details.</p>
+  </section>
+
+  <section id="conjecture-2" class="note-section">
+    <h2><span class="conjecture-number">Conjecture 2</span>Operator-Class Universality Conjecture</h2>
+    <div class="conjecture-statement">
+      <p>Let \(H\) be a fixed generic nonintegrable local Hamiltonian. For any two local initial operators \(O_1\) and \(O_2\) belonging to the same dynamical sector and orthogonal to all relevant conserved quantities, the corresponding Lanczos coefficients belong to the same asymptotic growth class.</p>
+    </div>
+    <h3>Assumptions</h3>
+    <ol>
+      <li>\(H\) is local and nonintegrable.</li>
+      <li>\(O_1\) and \(O_2\) are local.</li>
+      <li>For every relevant conserved quantity \(Q_a\), \((O_i|Q_a)=0\), \(i=1,2\).</li>
+      <li>\(O_1\) and \(O_2\) lie in the same symmetry and dynamical sector, so that differences caused purely by exact symmetry constraints are excluded.</li>
+    </ol>
+    <h3>Definitions</h3>
+    <p>Let \(b_n^{(i)}\) denote the Lanczos coefficients generated by \((H,O_i)\), \(i=1,2\).</p>
+    <h3>Claim</h3>
+    <p>For \(d&gt;1\),</p>
+    <div class="note-equation">\[b_n^{(i)}=\alpha_i n+\gamma_i+o(1),\qquad i=1,2,\]</div>
+    <p>while for \(d=1\),</p>
+    <div class="note-equation">\[b_n^{(i)}=A_i\frac{n}{\ln n}+o\!\left(\frac{n}{\ln n}\right).\]</div>
+    <p>The universal object is the asymptotic growth class; the prefactor and subleading structure are not assumed to be universal.</p>
+    <h3>Weak Conjecture 2</h3>
+    <p>Only the asymptotic growth class is operator-independent. The coefficients \(\alpha_i\), \(A_i\), and the subleading corrections may depend on the initial operator.</p>
+    <h3>Strong Conjecture 2</h3>
+    <p>Within a fixed ergodic sector, the asymptotic growth rate is independent of the local initial operator:</p>
+    <div class="note-equation">\[\alpha_1=\alpha_2\]</div>
+    <p>in \(d&gt;1\), or</p>
+    <div class="note-equation">\[A_1=A_2\]</div>
+    <p>in \(d=1\).</p>
+  </section>
+
+  <section id="conjecture-3" class="note-section">
+    <h2><span class="conjecture-number">Conjecture 3</span>Nonanalytic Integrability-Breaking Conjecture</h2>
+    <div class="conjecture-statement">
+      <p>Let</p>
+      <div class="note-equation">\[H(g)=H_{\mathrm{int}}+gV\]</div>
+      <p>interpolate between an integrable model at \(g=0\) and a nonintegrable model for \(g\neq 0\). Then the asymptotic Lanczos growth rate is generically nonanalytic at the integrable point.</p>
+    </div>
+    <h3>Assumptions</h3>
+    <ol>
+      <li>\(H_{\mathrm{int}}\) is integrable and local.</li>
+      <li>\(V\) is a local perturbation that breaks integrability for \(g\neq 0\).</li>
+      <li>The initial operator \(O\) is local and orthogonal to all relevant conserved quantities.</li>
+      <li>The asymptotic Lanczos growth rate exists in the nonintegrable regime.</li>
+    </ol>
+    <h3>Definitions</h3>
+    <p>For \(d&gt;1\), define</p>
+    <div class="note-equation">\[\alpha(g)=\lim_{n\to\infty}\frac{b_n(g)}{n},\]</div>
+    <p>whenever the limit exists. In one dimension, define analogously</p>
+    <div class="note-equation">\[A(g)=\lim_{n\to\infty}\frac{b_n(g)\ln n}{n}.\]</div>
+    <p>We call \(\alpha(g)\) analytic at \(g=0\) if it admits a convergent local Taylor expansion</p>
+    <div class="note-equation">\[\alpha(g)=\alpha_0+c_1 g+c_2 g^2+\cdots\]</div>
+    <p>in a neighborhood of \(g=0\).</p>
+    <h3>Claim</h3>
+    <p>For generic integrability-breaking perturbations, \(\alpha(g)\) (or \(A(g)\) in one dimension) is not analytic at \(g=0\). The integrable-to-nonintegrable transition in Krylov growth is therefore singular in the asymptotic Krylov-depth limit.</p>
+    <h3>Weak Conjecture 3</h3>
+    <p>The asymptotic growth rate is nonanalytic at the integrable point:</p>
+    <div class="note-equation">\[\alpha(g)\text{ is nonanalytic at }g=0.\]</div>
+    <h3>Strong Conjecture 3</h3>
+    <p>For a broad class of weakly nonintegrable systems,</p>
+    <div class="note-equation">\[\alpha(g)\sim\frac{C}{[\ln(1/g)]^{\eta}}\]</div>
+    <p>as \(g\to 0^+\), with constants \(C&gt;0\) and \(\eta&gt;0\) determined by the perturbation class.</p>
+  </section>
+
+  <section id="conjecture-4" class="note-section">
+    <h2><span class="conjecture-number">Conjecture 4</span>Subleading Lanczos Chaos Conjecture</h2>
+    <div class="conjecture-statement">
+      <p>When two systems share the same leading Lanczos growth law, the distinction between chaotic, integrable, and hydrodynamically constrained dynamics is encoded primarily in the subleading structure of the Lanczos coefficients rather than in the leading slope alone.</p>
+    </div>
+    <h3>Assumptions</h3>
+    <p>Assume that, after removing the appropriate leading UOGH growth, a well-defined residual Lanczos sequence remains. For \(d&gt;1\), write</p>
+    <div class="note-equation">\[b_n=\alpha n+\gamma+\delta b_n.\]</div>
+    <p>For \(d=1\), subtract the leading term \(An/\ln n\) instead.</p>
+    <h3>Definitions</h3>
+    <p>Define the residual sequence</p>
+    <div class="note-equation">\[\delta b_n=b_n-\alpha n-\gamma\]</div>
+    <p>for \(d&gt;1\). Define its Krylov-index autocorrelation function</p>
+    <div class="note-equation">\[R(m)=\lim_{N\to\infty}\frac{1}{N}\sum_{n=1}^{N}\delta b_n\,\delta b_{n+m},\]</div>
+    <p>whenever the limit exists. Define the even-odd staggering sequence</p>
+    <div class="note-equation">\[S_n=(-1)^n\delta b_n,\]</div>
+    <p>and the Krylov-index power spectrum</p>
+    <div class="note-equation">\[P(k)=\left|\sum_n\delta b_n e^{-ikn}\right|^2.\]</div>
+    <h3>Claim</h3>
+    <p>Two systems may have the same leading slope \(\alpha\) and nevertheless possess inequivalent dynamics. Such inequivalence is reflected in the asymptotic or statistical structure of \(\delta b_n\).</p>
+    <h3>Weak Conjecture 4</h3>
+    <p>At least one asymptotic statistic constructed from \(\delta b_n\) distinguishes chaotic and integrable dynamics even when their leading Lanczos growth laws coincide.</p>
+    <h3>Strong Conjecture 4</h3>
+    <p>There exists a universal functional relation</p>
+    <div class="note-equation">\[\mathcal{F}[\delta b_n]\longleftrightarrow\mathcal{C}_{\mathrm{chaos}},\]</div>
+    <p>where \(\mathcal{C}_{\mathrm{chaos}}\) is a conventional chaos diagnostic such as spectral rigidity, level-spacing statistics, the spectrum form factor, or the Thouless scale.</p>
+  </section>
+
+  <section id="conjecture-5" class="note-section">
+    <h2><span class="conjecture-number">Conjecture 5</span>Spectral-Tail Sufficiency Conjecture</h2>
+    <div class="conjecture-statement">
+      <p>Let \(O\) be a local operator in a local many-body system. If its high-frequency spectral function has a stable exponential tail, then the associated Lanczos coefficients have asymptotically linear growth.</p>
+    </div>
+    <h3>Assumptions</h3>
+    <p>Let</p>
+    <div class="note-equation">\[C(t)=(O|O(t))\]</div>
+    <p>be the autocorrelation function and</p>
+    <div class="note-equation">\[\Phi(\omega)=\int_{-\infty}^{\infty}dt\,e^{-i\omega t}C(t)\]</div>
+    <p>its spectral function. Assume that the high-frequency asymptotic behavior is well-defined.</p>
+    <h3>Definitions</h3>
+    <p>A stable exponential spectral tail means that there exists \(\omega_0&gt;0\) such that</p>
+    <div class="note-equation">\[\log\Phi(\omega)=-\frac{|\omega|}{\omega_0}+o(|\omega|)\]</div>
+    <p>as \(|\omega|\to\infty\).</p>
+    <h3>Claim</h3>
+    <p>Under the above condition,</p>
+    <div class="note-equation">\[b_n=\alpha n+o(n),\]</div>
+    <p>with</p>
+    <div class="note-equation">\[\alpha=\frac{\pi\omega_0}{2}.\]</div>
+    <p>Thus the exponential decay scale of the high-frequency spectral tail determines the leading Lanczos growth rate.</p>
+    <h3>Weak Conjecture 5</h3>
+    <p>If the spectral function satisfies two-sided exponential bounds</p>
+    <div class="note-equation">\[c_1 e^{-\kappa_1|\omega|}\leq\Phi(\omega)\leq c_2 e^{-\kappa_2|\omega|}\]</div>
+    <p>for sufficiently large \(|\omega|\), then the Lanczos coefficients satisfy two-sided linear bounds</p>
+    <div class="note-equation">\[c_- n\lesssim b_n\lesssim c_+ n\]</div>
+    <p>for sufficiently large \(n\).</p>
+    <h3>Strong Conjecture 5</h3>
+    <p>If</p>
+    <div class="note-equation">\[\lim_{|\omega|\to\infty}\frac{-\log\Phi(\omega)}{|\omega|}=\frac{1}{\omega_0},\]</div>
+    <p>then</p>
+    <div class="note-equation">\[\lim_{n\to\infty}\frac{b_n}{n}=\frac{\pi\omega_0}{2}.\]</div>
+  </section>
+
+  <section id="conjecture-6" class="note-section">
+    <h2><span class="conjecture-number">Conjecture 6</span>Local Counterexample Conjecture</h2>
+    <div class="conjecture-statement">
+      <p>There exists a standard local, closed, thermalizing, nonintegrable many-body Hamiltonian for which the Lanczos coefficients generated by the ordinary Liouvillian</p>
+      <div class="note-equation">\[\mathcal{L}=[H,\cdot]\]</div>
+      <p>fail to obey the asymptotic maximal-growth form predicted by UOGH.</p>
+    </div>
+    <h3>Assumptions</h3>
+    <p>A candidate counterexample must satisfy all of the following:</p>
+    <ol>
+      <li>\(H=\sum_X h_X\) with finite-range or sufficiently rapidly decaying local interactions.</li>
+      <li>The thermodynamic limit exists.</li>
+      <li>The system is nonintegrable in the relevant parameter regime.</li>
+      <li>The system is thermalizing in the sense intended by the UOGH setting.</li>
+      <li>The initial operator \(O\) is local and satisfies \((O|Q_a)=0\) for all relevant conserved quantities.</li>
+    </ol>
+    <h3>Definitions</h3>
+    <p>For \(d&gt;1\), define the normalized Lanczos growth ratio</p>
+    <div class="note-equation">\[r_n=\frac{b_n}{n}.\]</div>
+    <p>For \(d=1\), define</p>
+    <div class="note-equation">\[r_n^{(\mathrm{1D})}=\frac{b_n\ln n}{n}.\]</div>
+    <p>A violation of UOGH means that the relevant normalized ratio fails to converge to a finite positive constant compatible with maximal growth.</p>
+    <h3>Claim</h3>
+    <p>There exists at least one model satisfying the assumptions above for which, in \(d&gt;1\), either</p>
+    <div class="note-equation">\[\lim_{n\to\infty}\frac{b_n}{n}=0,\]</div>
+    <p>or the limit does not exist, or the asymptotic form is otherwise incompatible with</p>
+    <div class="note-equation">\[b_n=\alpha n+\gamma+o(1).\]</div>
+    <p>In one dimension, the analogous violation is with respect to</p>
+    <div class="note-equation">\[b_n\sim A\frac{n}{\ln n}.\]</div>
+    <h3>Weak Conjecture 6</h3>
+    <p>There exists a thermalizing nonintegrable local model whose asymptotic Lanczos growth is strictly slower than the UOGH maximal-growth form.</p>
+    <h3>Strong Conjecture 6</h3>
+    <p>Such a counterexample can be realized by an ordinary finite-range lattice Hamiltonian without a generalized Liouvillian, open-system dynamics, or fine-tuned extensive conservation laws.</p>
+  </section>
+
+  <section id="conjecture-7" class="note-section">
+    <h2><span class="conjecture-number">Conjecture 7</span>Probabilistic UOGH Conjecture</h2>
+    <div class="conjecture-statement">
+      <p>For a suitable ensemble of random local many-body Hamiltonians, the Lanczos coefficients of a fixed local operator exhibit maximal growth with probability approaching one in the large-\(n\) limit.</p>
+    </div>
+    <h3>Assumptions</h3>
+    <p>Consider</p>
+    <div class="note-equation">\[H=\sum_X h_X,\]</div>
+    <p>where the local terms \(h_X\) are sampled from a specified random local ensemble. Fix a local initial operator \(O\) and assume that it has no overlap with the exact conserved quantities of the ensemble sector under study.</p>
+    <h3>Definitions</h3>
+    <p>Let \(b_n(H,O)\) denote the Lanczos coefficients associated with a realization \(H\) and initial operator \(O\). Let \(\mathbb{E}\) and \(\mathbb{P}\) denote ensemble expectation and probability, respectively.</p>
+    <h3>Claim</h3>
+    <p>There exists \(\alpha&gt;0\) such that</p>
+    <div class="note-equation">\[\frac{b_n}{n}\xrightarrow[n\to\infty]{\mathbb{P}}\alpha.\]</div>
+    <p>Equivalently, for every \(\varepsilon&gt;0\),</p>
+    <div class="note-equation">\[\mathbb{P}\!\left(\left|\frac{b_n}{n}-\alpha\right|&gt;\varepsilon\right)\to 0.\]</div>
+    <h3>Weak Conjecture 7</h3>
+    <p>The ensemble-averaged Lanczos coefficients satisfy</p>
+    <div class="note-equation">\[\mathbb{E}[b_n]=\alpha n+o(n)\]</div>
+    <p>for some \(\alpha&gt;0\).</p>
+    <h3>Strong Conjecture 7</h3>
+    <p>For every \(\varepsilon&gt;0\), there exists \(c_{\varepsilon}&gt;0\) such that</p>
+    <div class="note-equation">\[\mathbb{P}\!\left(\left|\frac{b_n}{n}-\alpha\right|&gt;\varepsilon\right)\leq e^{-c_{\varepsilon}n}\]</div>
+    <p>for all sufficiently large \(n\).</p>
+  </section>
+</div>
